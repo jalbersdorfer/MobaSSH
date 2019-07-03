@@ -10,7 +10,7 @@ install:
 
 before_build:
 - ps: >-
-    (gc MobaSSH.au3) -replace 'FileVersion, 1.1.0', 'FileVersion, 1.1.{build}' | Out-File -encoding ASCII MobaSSH.au3
+    (gc MobaSSH.au3) -replace 'FileVersion, 1.1.0', "FileVersion, 1.1.$Env:APPVEYOR_BUILD_NUMBER" | Out-File -encoding ASCII MobaSSH.au3
 
 build_script:
 - cmd: >-
