@@ -21,6 +21,16 @@
 ;                  * Initial public release.
 ; ==============================================================================
 
+#pragma compile(Out, MobaSSH.exe)
+; Uncomment to use the following icon. Make sure the file path is correct and matches the installation of your AutoIt install path.
+; #pragma compile(Icon, C:\Program Files\AutoIt3\Icons\au3.ico)
+#pragma compile(FileDescription, MobaSSH - Start (multiple) SSH Sessions in MobaXterm from Commandline and optionally run an initial command)
+#pragma compile(ProductName, MobaSSH)
+#pragma compile(ProductVersion, 1.1)
+#pragma compile(FileVersion, 1.1.0)
+#pragma compile(LegalCopyright, jalbersdorfer 2019)
+#pragma compile(CompanyName, 'jalbersdorfer')
+
 #include <MsgBoxConstants.au3>
 #include <StringConstants.au3>
 #include <Array.au3>

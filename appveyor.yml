@@ -7,6 +7,11 @@ install:
     (New-Object System.Net.WebClient).DownloadFile("https://github.com/turbo/AutoIt-CI/releases/download/1/autoit-v3-setup.exe", $installer)
 
     Start-Process -FilePath $installer -ArgumentList "/S" -NoNewWindow -Wait
+
+before_build:
+- ps: >-
+  (gc MobaSSH.au3) -replace 'FileVersion, 1.1.0', 'FileVersion, 1.1.{build}' | Out-File -encoding ASCII MobaSSH.au3
+
 build_script:
 - cmd: >-
     "%HOMEDRIVE%\Program Files (x86)\AutoIt3\aut2exe\aut2exe.exe"  /in "%CD%\MobaSSH.au3" /out "%CD%\MobaSSH.exe" /nopack /comp 2 /Console
