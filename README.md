@@ -16,14 +16,14 @@ Start (multiple) SSH Sessions in MobaXterm from Commandline and optionally run a
 MobaSSH.exe [IPs ...] [Command]
 ```
 
-## Example
+## Commandline Example
 
 Start three SSH Sessions to `1.2.3.4`, `5.6.7.8` and `9.10.11.12` and execute `ping 1.1.1.1` as initial command
 ```cmd
 MobaSSH.exe 1.2.3.4 5.6.7.8 9.10.11.12 ping 1.1.1.1
 ```
 
-or
+## Clipboard Example
 
 Copy
 
