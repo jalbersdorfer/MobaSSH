@@ -42,7 +42,7 @@ For $i = 1 To $CmdLine[0]
 		EndIf
 	Else
 		$eoips = True
-		If $cmd = "" Then
+		If $cmd = Default Then
 			$cmd = $arg
 		Else
 			$cmd = $cmd & " " & $arg
