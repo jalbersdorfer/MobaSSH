@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/5up6pp2sd3bh7lx9?svg=true)](https://ci.appveyor.com/project/jalbersdorfer/mobassh)
+[![Build status](https://ci.appveyor.com/api/projects/status/5up6pp2sd3bh7lx9?svg=true)](https://ci.appveyor.com/project/jalbersdorfer/mobassh/build/artifacts)
 
 # MobaSSH
 
@@ -7,8 +7,8 @@ Start (multiple) SSH Sessions in MobaXterm from Commandline and optionally run a
 # Prequesits
 
 - MobaXterm.exe on PATH
-- a .ssh/mobassh.user file containing the username to use for SSH login
-- a .ssh/mobassh.key file containing the private key to use for SSH login
+- a `.ssh/mobassh.user` file containing the username to use for SSH login
+- a `.ssh/mobassh.key` file containing the private key to use for SSH login
 
 # Usage
 
