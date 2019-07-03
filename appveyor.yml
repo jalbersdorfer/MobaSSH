@@ -1,0 +1,15 @@
+version: 1.1.{build}
+image: Visual Studio 2015
+install:
+- ps: >-
+    $installer = "$PSScriptRoot\setup.exe"
+
+    (New-Object System.Net.WebClient).DownloadFile("https://github.com/turbo/AutoIt-CI/releases/download/1/autoit-v3-setup.exe", $installer)
+
+    Start-Process -FilePath $installer -ArgumentList "/S" -NoNewWindow -Wait
+build_script:
+- cmd: >-
+    "%HOMEDRIVE%\Program Files (x86)\AutoIt3\aut2exe\aut2exe.exe"  /in "%CD%\MobaSSH.au3" /out "%CD%\MobaSSH.exe" /nopack /comp 2 /Console
+
+    MobaSSH.exe
+test: off
