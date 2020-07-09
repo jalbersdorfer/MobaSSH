@@ -66,11 +66,21 @@ EndIf
 
 Local $ips = StringSplit ( $ipstring, @CRLF, $STR_ENTIRESPLIT + $STR_NOCOUNT )
 For $ip In $ips
+	$ip = StringStripWS($ip, $STR_STRIPALL)
 	ShellExecute("MobaXterm.exe", "-newtab ""ssh -i .ssh/mobassh.key $(cat .ssh/mobassh.user)@" & StringStripWS($ip, $STR_STRIPALL) & """")
+	WinActivate("MobaXterm")
+	WinWaitActive("MobaXterm", "", 3)
+	Local $win = WinWaitActive($ip, "", 3)
+	If $win <> 0 Then
+		Local $to = 0
+		While StringInStr(WinGetTitle($win), $ip) > 0
+			$to = $to + 250
+			If $to > 3000 Then ExitLoop
+			Sleep(250)
+		WEnd
+	EndIf
 	If $cmd <> Default Then
-		WinActivate("MobaXterm")
-		WinWaitActive("MobaXterm")
-		Sleep(1000)
+		Sleep(250)
 		Send($cmd & "{ENTER}")
 	EndIf
 	Sleep(1000)
